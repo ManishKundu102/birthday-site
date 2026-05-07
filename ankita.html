@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Ankita 🎂</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      overflow:hidden;
+      height:100vh;
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(-45deg,#ff4d6d,#ff758f,#7b2cbf,#3a0ca3);
+      background-size:400% 400%;
+      animation:bg 12s ease infinite;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+    }
+
+    @keyframes bg{
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    .container{
+      text-align:center;
+      z-index:10;
+      padding:40px;
+      width:90%;
+      max-width:700px;
+      backdrop-filter:blur(12px);
+      background:rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:30px;
+      box-shadow:0 0 40px rgba(0,0,0,0.3);
+      animation:fadeIn 2s ease;
+      position:relative;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    h1{
+      font-size:4rem;
+      font-family:'Pacifico',cursive;
+      margin-bottom:10px;
+      text-shadow:0 0 20px rgba(255,255,255,0.8);
+    }
+
+    h2{
+      font-size:2rem;
+      margin-bottom:20px;
+      color:#ffe5ec;
+    }
+
+    p{
+      line-height:1.8;
+      font-size:1.1rem;
+    }
+
+    .gift-box{
+      width:140px;
+      height:140px;
+      background:#ff4d6d;
+      margin:40px auto;
+      border-radius:20px;
+      position:relative;
+      cursor:pointer;
+      transition:0.5s;
+      animation:bounce 2s infinite;
+      box-shadow:0 0 25px rgba(255,255,255,0.4);
+    }
+
+    .gift-box:hover{
+      transform:scale(1.08);
+    }
+
+    .gift-box::before{
+      content:'';
+      position:absolute;
+      width:25px;
+      height:140px;
+      background:white;
+      left:50%;
+      transform:translateX(-50%);
+    }
+
+    .gift-box::after{
+      content:'';
+      position:absolute;
+      width:140px;
+      height:25px;
+      background:white;
+      top:50%;
+      transform:translateY(-50%);
+    }
+
+    .lid{
+      position:absolute;
+      width:160px;
+      height:35px;
+      background:#ff758f;
+      top:-20px;
+      left:-10px;
+      border-radius:12px;
+      transition:1s;
+    }
+
+    .ribbon1,.ribbon2{
+      position:absolute;
+      width:35px;
+      height:35px;
+      border:8px solid white;
+      border-radius:50%;
+      top:-28px;
+    }
+
+    .ribbon1{
+      left:35px;
+    }
+
+    .ribbon2{
+      right:35px;
+    }
+
+    @keyframes bounce{
+      0%,100%{
+        transform:translateY(0);
+      }
+      50%{
+        transform:translateY(-12px);
+      }
+    }
+
+    .surprise{
+      display:none;
+      animation:show 2s ease;
+    }
+
+    @keyframes show{
+      from{
+        opacity:0;
+        transform:scale(0.5);
+      }
+      to{
+        opacity:1;
+        transform:scale(1);
+      }
+    }
+
+    .cake{
+      font-size:120px;
+      animation:spin 6s linear infinite;
+    }
+
+    @keyframes spin{
+      from{
+        transform:rotate(0deg);
+      }
+      to{
+        transform:rotate(360deg);
+      }
+    }
+
+    .message{
+      margin-top:20px;
+      font-size:1.3rem;
+      line-height:2;
+      color:#fff;
+    }
+
+    .hearts span{
+      position:absolute;
+      bottom:-100px;
+      font-size:20px;
+      animation:float 10s linear infinite;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+      }
+      10%{
+        opacity:1;
+      }
+      100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+      }
+    }
+
+    .photo{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      border:5px solid white;
+      object-fit:cover;
+      margin-top:20px;
+      box-shadow:0 0 30px rgba(255,255,255,0.5);
+    }
+
+    .final-text{
+      margin-top:20px;
+      font-size:1.1rem;
+      color:#ffe5ec;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div id="mainContent">
+      <h1>Happy Birthday 🎊</h1>
+      <h2>Ankita </h2>
+
+      <p>
+        Today is all about smiles, happiness,
+        love, and magical memories ✨
+      </p>
+
+      <div class="gift-box" onclick="openGift()">
+        <div class="lid"></div>
+        <div class="ribbon1"></div>
+        <div class="ribbon2"></div>
+      </div>
+
+      <p>Click the Gift Box 🎁</p>
+    </div>
+
+    <div class="surprise" id="surprise">
+      <div class="cake">🎂</div>
+
+      <div class="message">
+        Happy Birthday Ankita  🎂<br>
+        You are special, beautiful, and amazing ✨
+      </div>
+
+      <!-- Replace image URL with Ankita photo -->
+      <img 
+        src="ankita .jpeg"
+        class="photo"
+      />
+
+      <div class="final-text">
+        May your life always sparkle like stars 🌙✨
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hearts"></div>
+
+  <audio id="song">
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+  </audio>
+
+  <script>
+
+    function openGift(){
+
+      document.querySelector('.lid').style.transform =
+      'translateY(-120px) rotate(-25deg)';
+
+      setTimeout(()=>{
+        document.getElementById('mainContent').style.display='none';
+        document.getElementById('surprise').style.display='block';
+
+        document.getElementById('song').play();
+
+        createBurst();
+      },1000);
+    }
+
+    // Floating Hearts
+    const hearts=document.querySelector('.hearts');
+
+    function createHeart(){
+      const heart=document.createElement('span');
+
+      heart.innerHTML='💖';
+
+      heart.style.left=Math.random()*100+'vw';
+      heart.style.fontSize=Math.random()*25+15+'px';
+      heart.style.animationDuration=Math.random()*5+5+'s';
+
+      hearts.appendChild(heart);
+
+      setTimeout(()=>{
+        heart.remove();
+      },10000);
+    }
+
+    setInterval(createHeart,250);
+
+    // Burst Effect
+    function createBurst(){
+
+      for(let i=0;i<80;i++){
+
+        const burst=document.createElement('span');
+
+        burst.innerHTML='✨';
+
+        burst.style.position='absolute';
+        burst.style.left=Math.random()*100+'vw';
+        burst.style.top=Math.random()*100+'vh';
+        burst.style.fontSize=Math.random()*30+10+'px';
+
+        burst.style.animation='show 1s ease';
+
+        document.body.appendChild(burst);
+
+        setTimeout(()=>{
+          burst.remove();
+        },1500);
+      }
+    }
+
+  </script>
+
+</body>
+</html>
